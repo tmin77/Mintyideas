@@ -372,21 +372,6 @@ a.chan:hover { border-color: var(--fern); }
 .chan strong { font-family: var(--f-display); font-weight: 400; font-size: 1.4rem; }
 .chan > span:last-child { color: var(--muted); font-size: 0.9rem; }
 
-/* Campaign case studies */
-.cases { display: grid; gap: 1.2rem; }
-.case { background: #f6f7f3; border: 1px solid var(--paper-line); border-radius: var(--radius); padding: clamp(1.4rem, 3vw, 2.2rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(1.2rem, 3vw, 2.5rem); }
-.case .kicker { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--forest); }
-.case header { display: grid; gap: 0.6rem; align-content: start; }
-.case-chips { list-style: none; margin: 0.3rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.case-chips li { font-size: 0.8rem; border: 1px solid var(--paper-line); border-radius: 999px; padding: 0.2rem 0.65rem; color: var(--paper-muted); }
-.case dl { margin: 0; display: grid; gap: 1rem; }
-.case dt { font-weight: 700; font-size: 0.88rem; }
-.case dd { margin: 0.2rem 0 0; color: var(--paper-muted); font-size: 0.96rem; }
-.case-results { display: grid; gap: 0.6rem; align-content: start; border-left: 1px solid var(--paper-line); padding-left: clamp(1rem, 2.5vw, 2rem); }
-.case-results ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.6rem; }
-.case-results li { font-family: var(--f-display); font-size: 1.3rem; line-height: 1.2; }
-@media (max-width: 860px) { .case { grid-template-columns: 1fr; } .case-results { border-left: 0; padding-left: 0; border-top: 1px solid var(--paper-line); padding-top: 1rem; } }
-
 /* Ideate / Create / Share triad (brand imagery) */
 .triad { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 1.8rem); }
 .tri-item { display: grid; gap: 1.1rem; align-content: start; min-width: 0; }

@@ -209,7 +209,7 @@ GENERAL_FAQS = [
     ("Which platforms do you specialize in?", "TikTok, LinkedIn, and YouTube, including YouTube Shorts. Short-form video made for these platforms can also be adapted for Instagram Reels."),
     ("Can you create the content for us, or only advise?", "Both. Some clients want a strategy and coaching so their team can create in-house. Others want done-for-you content creation. Many use a mix of the two."),
     ("Do you offer one-time projects?", "Yes. Strategy sprints, channel audits, and website revamps can be one-time projects. Content creation and growth work usually runs as a monthly retainer, because consistency is what drives results."),
-    ("Can I see examples of your work?", "Yes. The Work page shows viral TikToks from Tyler's personal account, brand content for Posit PBC across TikTok, Instagram, YouTube, and LinkedIn, and marketing campaigns she helped run."),
+    ("Can I see examples of your work?", "Yes. The Work page shows viral TikToks from Tyler's personal account and brand content for Posit PBC across TikTok, Instagram, YouTube, and LinkedIn."),
     ("How much does it cost to work with Minty Ideas?", "Pricing depends on scope, platforms, and how much content is involved. After a short intro call, you get a written proposal with clear deliverables and pricing."),
     ("How do you measure success?", "We agree on metrics up front. For social growth that usually means engagement rate, watch time, shares, saves, follower growth, and leads or sales attributed to content. For websites it means search visibility, traffic, and conversions."),
     ("How do I get started?", "Send a note through the contact form or email Tyler@mintyideas.com with what you are working on. You will hear back within two business days to set up an intro call."),
@@ -251,30 +251,3 @@ BRAND_CHANNELS = [
     ("LinkedIn", "Posit PBC", "https://www.linkedin.com/company/posit-software"),
 ]
 BRAND_NOTE = "Created as part of the Posit marketing team."
-
-CAMPAIGNS = [
-    {
-        "name": "[Campaign name]",
-        "client": "Posit PBC",
-        "channels": ["[Paid social]", "[LinkedIn]", "[Email]"],
-        "challenge": "[One or two sentences: the goal or problem this campaign solved.]",
-        "approach": "[What you did: strategy, audience, creative, channels, your role.]",
-        "results": ["[Result 1, e.g. pipeline or leads generated]", "[Result 2, e.g. engagement or reach]", "[Result 3]"],
-    },
-    {
-        "name": "[Campaign name]",
-        "client": "Posit PBC",
-        "channels": ["[TikTok]", "[YouTube Shorts]", "[Instagram]"],
-        "challenge": "[One or two sentences: the goal or problem this campaign solved.]",
-        "approach": "[What you did: strategy, audience, creative, channels, your role.]",
-        "results": ["[Result 1]", "[Result 2]", "[Result 3]"],
-    },
-    {
-        "name": "[Campaign name]",
-        "client": "[Client or brand]",
-        "channels": ["[ABM]", "[Paid media]", "[Webinar]"],
-        "challenge": "[One or two sentences: the goal or problem this campaign solved.]",
-        "approach": "[What you did: strategy, audience, creative, channels, your role.]",
-        "results": ["[Result 1]", "[Result 2]", "[Result 3]"],
-    },
-]

@@ -107,7 +107,7 @@ def footer():
 <p>Marketing consulting, short-form video, and community growth on TikTok, LinkedIn, and YouTube. Based in {CITY}, Arizona. Working with clients everywhere.</p>
 <p><a class="email-line" style="font-size:1.25rem" href="mailto:{EMAIL}">{EMAIL}</a></p></div>
 <div><h4>Services</h4><ul>{svc}</ul></div>
-<div><h4>Company</h4><ul><li><a href="{L("work")}">Work and campaigns</a></li><li><a href="{L("about")}">About Tyler</a></li><li><a href="{L("faq")}">FAQ</a></li><li><a href="{L("contact")}">Contact</a></li>{soc}</ul></div>
+<div><h4>Company</h4><ul><li><a href="{L("work")}">Work</a></li><li><a href="{L("about")}">About Tyler</a></li><li><a href="{L("faq")}">FAQ</a></li><li><a href="{L("contact")}">Contact</a></li>{soc}</ul></div>
 </div>
 <div class="legal"><span>&copy; <span data-year>{date.today().year}</span> {BRAND}. All rights reserved.</span><span>{CITY}, Arizona</span></div>
 </div></footer>'''
@@ -517,18 +517,9 @@ def totals(group=None):
     vs = [v for v in WORK_VIDEOS if group is None or v["group"] in (group if isinstance(group, tuple) else (group,))]
     return sum(v["views"] for v in vs), sum(v["likes"] for v in vs), sum(v["comments"] for v in vs), len(vs)
 
-def campaign_card(c):
-    chips = "".join(f"<li>{e(ch)}</li>" for ch in c["channels"])
-    res = "".join(f"<li>{e(r)}</li>" for r in c["results"])
-    return f"""<article class="case">
-<header><span class="kicker">{e(c["client"])}</span><h3>{e(c["name"])}</h3><ul class="case-chips">{chips}</ul></header>
-<dl><div><dt>The challenge</dt><dd>{e(c["challenge"])}</dd></div><div><dt>What I did</dt><dd>{e(c["approach"])}</dd></div></dl>
-<div class="case-results"><span class="kicker">Results</span><ul>{res}</ul></div>
-</article>"""
-
 def build_work():
     title = "Work: Viral TikTok and Short-Form Video Examples | Minty Ideas"
-    desc = "Short-form video examples by Tyler Minear of Minty Ideas: viral TikToks including one with 3.3M views, Posit PBC brand TikToks, and marketing campaigns."
+    desc = "Short-form video examples by Tyler Minear of Minty Ideas: viral TikToks including one with 3.3M views, and Posit PBC brand TikToks."
     trail = [("Home", "home"), ("Work", "work")]
     mine = [v for v in WORK_VIDEOS if v["group"] in ("personal", "spiritual")]
     brand = [v for v in WORK_VIDEOS if v["group"] == "brand"]
@@ -542,11 +533,10 @@ def build_work():
         (f'<a class="chan" href="{u}" target="_blank" rel="noopener"><span class="vc-plat">{n}</span><strong>{e(h)}</strong><span>View channel &rarr;</span></a>' if u
          else f'<div class="chan vc-empty"><span class="vc-plat">{n}</span><strong>{e(h)}</strong><span>[Add profile link]</span></div>')
         for n, h, u in BRAND_CHANNELS)
-    cases = "".join(campaign_card(c) for c in CAMPAIGNS)
     body = f"""
 <section class="page-hero"><div class="wrap">{crumbs_html(trail)}<div class="hero-copy">
-<span class="eyebrow">Work</span><h1>Selected <em>work</em> and campaigns</h1>
-<p class="answer">Examples of short-form video and campaigns by Tyler Minear, founder of Minty Ideas. The {tn} TikToks on this page have earned {fmt(tv)} organic views, {fmt(tl)} likes, and {fmt(tc)} comments, including a personal video with {fmt(top["views"])} views and brand content for Posit PBC with {fmt(bv)} combined views.</p>
+<span class="eyebrow">Work</span><h1>Selected <em>work</em></h1>
+<p class="answer">Examples of short-form video by Tyler Minear, founder of Minty Ideas. The {tn} TikToks on this page have earned {fmt(tv)} organic views, {fmt(tl)} likes, and {fmt(tc)} comments, including a personal video with {fmt(top["views"])} views and brand content for Posit PBC with {fmt(bv)} combined views.</p>
 <dl class="work-stats">
 <div><dt>{fmt(tv)}</dt><dd>organic views</dd></div>
 <div><dt>{fmt(tl)}</dt><dd>likes</dd></div>
@@ -569,11 +559,6 @@ def build_work():
 <div class="chans">{chans}</div>
 </div></section>
 
-<section class="paper" id="campaigns"><div class="wrap">
-<div class="section-head"><span class="eyebrow">Campaigns</span><h2>Campaigns I've helped <em>run</em></h2>
-<p class="lede">Integrated programs across paid, organic, and owned channels, from planning to reporting.</p></div>
-<div class="cases">{cases}</div>
-</div></section>
 {cta("Want results like these for your brand?", "Tell me which platforms matter most and what you want to grow. I will reply within two business days with next steps.")}"""
     items = [{"@type": "ListItem", "position": i + 1, "item": {"@type": "CreativeWork", "name": v["title"] or f'TikTok by {v["account"]} ({fmt(v["views"])} views)', "url": v["url"],
               "creator": {"@id": PERSON_ID}, "genre": "Short-form video"}} for i, v in enumerate(WORK_VIDEOS) if v.get("url")]
@@ -640,7 +625,7 @@ def write_seo_files(base):
 ## About
 
 - [About {FOUNDER}]({url('about')}): Founder background in B2B campaign marketing (account-based marketing, paid media, marketing automation) and hands-on audience growth on TikTok, LinkedIn, and YouTube.
-- [Work and campaigns]({url('work')}): Examples of viral TikToks, Posit PBC brand content on TikTok, Instagram, YouTube, and LinkedIn, and marketing campaigns.
+- [Work]({url('work')}): Examples of viral TikToks and Posit PBC brand content on TikTok, Instagram, YouTube, and LinkedIn.
 - [FAQ]({url('faq')}): Services, platforms, pricing approach, measurement, and how to get started.
 - [Contact]({url('contact')}): Contact form and email.
 
